@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chess</title>
+</head>
+<body>
+
+    <div class = "board-layout-component">
+        <div id = "player-top" class="player-component">
+            <section id = "player-top-name">BOT</section>
+            <section id="timer-top" class="timer">
+                0:00
+            </section>
+        </div>
+
+        <div class = "chess-board">
+            <div id="game-over-component">
+                <span id="close-game-over-component">&#10060</span>
+                <div id="game-over-title"></div>
+            </div>
+        </div>
+
+        <div id = "player-bottom" class="player-component">
+            <section id = "player-bottom-name">YOU</section>
+            <section id = "timer-bottom" class="timer">
+                0:00
+            </section>
+        </div>
+    </div>  
+
+    <div class="sidebar-component">
+
+    <button onclick="Play()" class="play-button" >Play</button>
+
+    <label for="TimeControlHuman">Player Time Control:</label>
+
+        <select name="TimeControlHuman" id="TimeControlHuman">
+            <optgroup label="Bullet">
+                <option value="60000">1 min</option>
+                <option value="120000">2 min</option>
+                <option value="15000">15 sec</option>
+                <option value="30000">30 sec</option>
+            </optgroup>
+            <optgroup label="Blitz">
+                <option value="180000">3 min</option>
+                <option value="300000">5 min</option>
+            </optgroup>
+            <optgroup label="Rapid">
+                <option value="600000">10 min</option>
+                <option value="900000">15 min</option>
+                <option value="1800000">30 min</option>
+            </optgroup>
+        </select>
+
+        <label for="TimeControlBot">Bot Time Control:</label>
+
+        <select name="TimeControlBot" id="TimeControlBot">
+            <optgroup label="Bullet">
+                <option value="60000">1 min</option>
+                <option value="120000">2 min</option>
+                <option value="15000">15 sec</option>
+                <option value="30000">30 sec</option>
+            </optgroup>
+            <optgroup label="Blitz">
+                <option value="180000">3 min</option>
+                <option value="300000">5 min</option>
+            </optgroup>
+            <optgroup label="Rapid">
+                <option value="600000">10 min</option>
+                <option value="900000">15 min</option>
+                <option value="1800000">30 min</option>
+            </optgroup>
+        </select>
+
+        <label for="Choose-Side">I play as: </label>
+        <select name="Choose-Side" id = "Choose-Side">
+            <option value="0">White</option>
+            <option value="1">Black</option>
+            <option value="2">Random</option>
+        </select>
+
+        <button onclick="UndoMove()">Undo Move</button>
+        <button onclick="FlipBoard()">Flip Board</button>
+
+    </div>
+
+    <script src="js/Chess.js"></script>
+    <script src="js/HashTable.js"></script>
+    <script src="js/MakeMove.js"></script>
+    <script src="js/Board.js"></script>
+    <script src="js/MoveGenerator.js"></script>
+    <!--<script src="js/MoveGeneratorTesting.js"></script> -->
+    <script src="js/Evaluation.js"></script>
+    <script src="js/Search.js"></script>
+    <script src="js/GUI.js"></script>
+</body>
+</html>
